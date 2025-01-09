@@ -5,10 +5,10 @@ export PATH=$PATH:/usr/local/bin
 set -e
 
 if [ ! -d /dev/net ]; then
-    mkdir -p /dev/net
+  mkdir -p /dev/net
 fi
 if [ ! -c /dev/net/tun ]; then
-    mknod /dev/net/tun c 10 200
+  mknod /dev/net/tun c 10 200
 fi
 
 # Start the daemon
@@ -22,11 +22,9 @@ sleep 10
 
 # Start downloads if enabled
 if [ "${ENABLE_DOWNLOADS}" = "TRUE" ]; then
-    echo "Enabling downloads"
-    /app/tailscale file get -wait=true -conflict=rename -loop=true /downloads &
+  echo "Enabling downloads"
+  /app/tailscale file get -wait=true -conflict=rename -loop=true /downloads &
 fi
-
 
 # Do nothing until the end of time
 sleep infinity
-
