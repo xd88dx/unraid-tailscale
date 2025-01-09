@@ -1,12 +1,11 @@
-Tags
-----
+## Tags
 
 Docker Hub Tags: (dev-)[0-9].[0-9].[0.9]
 Git Tags: [0-9].[0-9].[0-9]
 
 Run ./build.sh <version> (dev)
 
-Will build 
+Will build
 (dev-)<version> (x.y.z)
 
 Will tag
@@ -15,5 +14,3 @@ Will tag
 If dev build will also push both builds to docker hub
 
 Prod builds must be manually pushed
-
-
