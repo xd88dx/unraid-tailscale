@@ -19,7 +19,7 @@ else
   echo "Building dev"
 fi
 
-docker build --no-cache --build-arg VERSION=$VERSION -t registry.cn-hangzhou.aliyuncs.com/xd88dx/tailscale:${FULL_TAG} .
+docker build --build-arg VERSION=$VERSION -t xd88dx/tailscale:${FULL_TAG} .
 
 ret=$?
 if [ $ret -ne 0 ]; then
@@ -27,8 +27,8 @@ if [ $ret -ne 0 ]; then
   exit 1
 fi
 
-docker tag registry.cn-hangzhou.aliyuncs.com/xd88dx/tailscale:${FULL_TAG} registry.cn-hangzhou.aliyuncs.com/xd88dx/tailscale:${SHORT_TAG}
-docker tag registry.cn-hangzhou.aliyuncs.com/xd88dx/tailscale:${FULL_TAG} registry.cn-hangzhou.aliyuncs.com/xd88dx/tailscale:latest
-docker push registry.cn-hangzhou.aliyuncs.com/xd88dx/tailscale:${FULL_TAG}
-docker push registry.cn-hangzhou.aliyuncs.com/xd88dx/tailscale:${SHORT_TAG}
-docker push registry.cn-hangzhou.aliyuncs.com/xd88dx/tailscale:latest
+docker tag xd88dx/tailscale:${FULL_TAG} xd88dx/tailscale:${SHORT_TAG}
+docker tag xd88dx/tailscale:${FULL_TAG} xd88dx/tailscale:latest
+docker push xd88dx/tailscale:${FULL_TAG}
+docker push xd88dx/tailscale:${SHORT_TAG}
+docker push xd88dx/tailscale:latest
