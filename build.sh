@@ -27,8 +27,8 @@ if [ $ret -ne 0 ]; then
   exit 1
 fi
 
-docker tag xd88dx/tailscale:${FULL_TAG} xd88dx/tailscale:${SHORT_TAG}
+# docker tag xd88dx/tailscale:${FULL_TAG} xd88dx/tailscale:${SHORT_TAG}
+# docker push xd88dx/tailscale:${SHORT_TAG}
 docker tag xd88dx/tailscale:${FULL_TAG} xd88dx/tailscale:latest
 docker push xd88dx/tailscale:${FULL_TAG}
-docker push xd88dx/tailscale:${SHORT_TAG}
 docker push xd88dx/tailscale:latest
